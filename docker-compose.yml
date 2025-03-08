@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mongo-portfolio:
+    image: mongo
+    container_name: mongo-portfolio
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-portfolio-data:/data/db
+
+  mongo-transactions:
+    image: mongo
+    container_name: mongo-transactions
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongo-transaction-data:/data/db
+
+  mongo-creditcard:
+    image: mongo
+    container_name: mongo-creditcard
+    ports:
+      - "27020:27017"
+    volumes:
+      - mongo-creditcard-data:/data/db
+
+volumes:
+  mongo-portfolio-data:
+  mongo-transaction-data:
+  mongo-creditcard-data:
